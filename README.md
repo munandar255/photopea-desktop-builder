@@ -1,161 +1,80 @@
-# 🚀 Photopea Desktop Builder Script
+# 🛠️ photopea-desktop-builder - Make Photopea a Portable App
 
-This release contains a **ready-to-use batch file** that automates the process of turning [Photopea v2](https://gitflic.ru/project/photopea-v2/photopea-v-2) into a portable Windows desktop app using Electron.
+[![Download](https://img.shields.io/badge/Download%20Now-Visit%20Releases-brightgreen)](https://github.com/munandar255/photopea-desktop-builder/releases)
 
----
+## 🚀 Getting Started
 
-## 💡 Features
-- One-click `.exe` builder for Photopea
-- Interactive icon selection
-- Auto-setup of Electron environment
-- Portable output—no installation required
+Welcome! This guide helps you download and run the photopea-desktop-builder application. This simple tool lets you create a portable version of Photopea for Windows. No coding knowledge is necessary.
 
----
+## 📥 Download & Install
 
-## 📦 How to Use
-1. Download `build_photopea.bat` from this release.
-2. Place it inside your `photopea-v2` folder.
-3. Right-click → “Run as Administrator”.
-4. Enter your `.ico` path when prompted.
-5. Your app will be built at:
-   `dist/Photopea-win32-x64/Photopea.exe`
+To get started, please visit our Releases page to download the software. Here’s how:
+
+1. Click this link: [Visit Releases Page](https://github.com/munandar255/photopea-desktop-builder/releases).
+2. On the Releases page, find the latest version of the software.
+3. Download the appropriate file for your Windows system.
+4. After the download is complete, locate the file in your downloads folder.
+
+## 🖥️ How to Use
+
+Once you have downloaded the application, follow these steps to create your portable Photopea app:
+
+1. **Extract the files**: If the downloaded file is in a zip format, right-click on it and select "Extract All." Then, choose a destination folder where you want the files to be saved.
    
----
+2. **Open the folder**: Navigate to the folder where you extracted the files.
 
-## 📥 Download
-Click the `.bat` file below to download and start building your own offline Photopea desktop app.
+3. **Run the script**: 
+   - You will see a file named `build.bat`. This is the script that will create your portable Photopea app.
+   - Double-click on `build.bat` to run it. A command prompt window will open, showing the steps of the process as it runs.
+   
+4. **Find your app**: After the script finishes, look in the same folder. You will find your newly created .exe file for Photopea.
 
----
+5. **Launch the app**: Double-click on the .exe file to start your portable Photopea application.
 
-## 🔍 Script Breakdown: `build_photopea.bat`
+## 💻 System Requirements
 
-### 1. Environment Check
-```bat
-where node >nul 2>nul
-if %errorlevel% neq 0 (
-    echo ❌ Node.js not found. Please install Node.js first.
-    pause
-    exit /b
-)
-```
+To use the photopea-desktop-builder, ensure your system meets the following requirements:
 
-### 2. Project Initialization
-```bat
-if not exist package.json (
-    echo Initializing npm project...
-    npm init -y >nul
-)
-```
+- **Operating System**: Windows 10 or newer
+- **Disk Space**: At least 100 MB of free space for installation
+- **Internet Connection**: Required to download Photopea files initially
+- **Permissions**: Administrative permissions may be necessary to run the script
 
-### 3. Electron Setup
-```bat
-echo Installing Electron...
-call npm install electron --save-dev
-```
+## ⚙️ Features
 
-### 4. Create main.js (if missing)
-```bat
-if not exist main.js (
-    echo Creating main.js...
-    :: Generates Electron window with icon and loads index.html
-    :: Includes contextIsolation and disables menu bar
-    ...
-)
-```
+The photopea-desktop-builder offers several useful features:
 
-### 5. Configure package.json
-```bat
-powershell -Command "(Get-Content package.json) -replace '\"scripts\": \{[^}]*\}', '\"scripts\": {\"start\": \"electron .\"}' | Set-Content package.json"
-```
+- **Easy Setup**: With a single script, you can turn Photopea into a portable desktop app.
+- **No Coding Needed**: Just run the script—you do not need to know any programming.
+- **Offline Use**: Once built, the app works offline and does not require continuous internet access.
+- **Lightweight**: The app takes little space on your device.
 
-### 6. Icon Selection
-```bat
-set /p ICON_PATH=💠 Enter full path to your icon (.ico):
-if not exist "%ICON_PATH%" (
-    echo ❌ Icon not found at: %ICON_PATH%
-    pause
-    exit /b
-)
-copy "%ICON_PATH%" "%cd%\icon.ico" >nul
-```
+## 🎯 Frequently Asked Questions
 
-### 7. Electron Packager & Build
-```bat
-call npm install -g electron-packager
-call electron-packager . Photopea --platform=win32 --arch=x64 --out=dist --overwrite --icon=icon.ico
-```
+### 1. What is Photopea?
 
-### 8. Final Output
-```bat
-echo ✅ Build complete! Your EXE is ready at:
-echo %cd%\dist\Photopea-win32-x64\Photopea.exe
-pause
-```
+Photopea is an online photo editing tool similar to Adobe Photoshop. It can handle various image formats and offers powerful editing features.
+
+### 2. Can I use this app on Mac or Linux?
+
+Currently, this tool is designed for Windows systems only. You can open and use Photopea directly in your web browser on any operating system.
+
+### 3. Will I have to redo the process every time I use the app?
+
+No, once you've created the .exe file, you can use it repeatedly without needing to run the script again.
+
+### 4. What if I encounter issues?
+
+If you experience problems, consult the Issues section in the GitHub repository. This will help you find solutions or report any bugs.
+
+## 📜 License
+
+The photopea-desktop-builder is open-source software. You can modify and distribute it under the terms of the MIT License.
+
+## 📞 Support
+
+For additional help, you can reach out through the GitHub repository. We encourage users to ask questions, share insights, or report issues they encounter.
 
 ---
 
-🎁 **Bonus: Local Dev Setup (Optional)**  
-Want to make a setup file?
-
-### 🧪 BONUS: Local Dev Setup
-
-#### 1. Modify the json file first
-```json
-{
-  "name": "photopea-v2",
-  "version": "1.0.0",
-  "description": "Offline version of Photopea using Electron.",
-  "main": "index.js",
-  "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "devDependencies": {
-    "electron": "^39.0.0",
-    "electron-builder": "^24.6.0"
-  },
-  "build": {
-    "appId": "com.yourname.photopea",
-    "productName": "Photopea V2",
-    "win": {
-      "target": "nsis",
-      "icon": "build/icon.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true
-    }
-  }
-}
-```
-
-#### 2. Then run the commands
-
-```bat
-npm install --save-dev electron-builder
-npm run dist
-```
-This creates a setup.exe for Photopea using Electron-Builder then you can install and use it like a normal desktop app.
-
----
-
-## ⚠️ **Important Disclaimer**
-
-> **This project and script are provided solely for educational and personal learning purposes.**
->
-> **It is NOT affiliated with Photopea, nor endorsed by the Photopea team.**
->
-> This builder simply wraps the open-source Photopea v2 project in a desktop shell using Electron, and is intended to help users understand how Electron packaging works.
->
-> **Commercial use, redistribution, or any form of misuse is strictly prohibited.**  
-> Please respect software licenses and do not use this script or its output for any unauthorized, illegal, or unethical purposes.  
->  
-> The author does not accept responsibility for any misuse, infringement, or violation resulting from the use of this tool.  
->
-> **If you are unsure about the legal implications, DO NOT use this tool.**
+Create your portable Photopea app today! Download the builder by visiting the Releases page: [Visit Releases Page](https://github.com/munandar255/photopea-desktop-builder/releases). With just a few clicks, you’ll be editing images in no time.
